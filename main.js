@@ -5,6 +5,7 @@ var _ = require('underscore'),
     extend = require('util')._extend,
     fs = require('fs'),
     gm = require('gm'),
+    stream = require('stream'),
     im = gm.subClass({imageMagick: true});
 
 // exported module
@@ -18,15 +19,15 @@ module.exports = {
      */
     convertPathToImage: function(path, callback){
 
-        if (path.match(/^htt/) || fs.lstatSync(path).isFile()){
+        if (path instanceof stream || path.match(/^htt/) || fs.lstatSync(path).isFile()){
 
             // path is valid
             callback(undefined, im(path));
 
         } else {
 
-            // unable to quantify image path
-            callback('Unable to quantify image path', undefined);
+            // unable to qualify image path
+            callback('Unable to qualify image path', undefined);
 
         }
 

@@ -1,14 +1,14 @@
 
-# imagecolors
+# imagecolors-stream
 
-A node module that pulls useful color information out of an image through a combination of ImageMagick color quantization algorithms and human fiddling.
+This is a fork of https://github.com/tobius/imagecolors, which is a node module that pulls useful color information out of an image through a combination of ImageMagick color quantization algorithms and human fiddling. This fork adds support for streams as input (additional to HTTP URLs and local file path).
 
 ## Install
 
 You can install via NPM.
 
 ```shell
-[~] npm install imagecolors
+[~] npm install https://github.com/erkstruwe/imagecolors-stream.git
 ```
 
 ## Usage

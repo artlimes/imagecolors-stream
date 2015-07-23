@@ -1,5 +1,5 @@
 {
-  "name": "imagecolors",
+  "name": "imagecolors-stream",
   "description": "A node module that pulls useful color information out of an image through a combination of ImageMagick color quantization algorithms and human fiddling.",
   "version": "0.10.5",
   "author": "Toby Miller <tobius.miller@gmail.com>",
@@ -12,10 +12,10 @@
     "quantization"
   ],
   "main": "./main.js",
-  "homepage": "http://github.com/tobius/imagecolors",
+  "homepage": "http://github.com/erkstruwe/imagecolors-stream",
   "repository": {
     "type": "git",
-    "url": "git://github.com/tobius/imagecolors.git"
+    "url": "git://github.com/erkstruwe/imagecolors-stream.git"
   },
   "dependencies": {
     "color": "~0.4.4",

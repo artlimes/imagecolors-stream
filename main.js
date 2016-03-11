@@ -19,7 +19,7 @@ module.exports = {
      */
     convertPathToImage: function(path, callback){
 
-        if (path instanceof stream || path.match(/^htt/) || fs.lstatSync(path).isFile()){
+        if (path instanceof stream || path.__HighlandStream__ || path.match(/^htt/) || fs.lstatSync(path).isFile()){
 
             // path is valid
             callback(undefined, im(path));

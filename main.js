@@ -184,7 +184,7 @@ module.exports = {
             // pink family
             { name : 'pink',            h : [286,300],  s : [1,100],    l : [71,100]    },  // magenta -> pink
             { name : 'pink',            h : [301,345],  s : [20,100],   l : [50,89]     },  // red-magenta -> pink
-            { name : 'pink',            h : [346,9],    s : [1,74],     l : [10,100]    },  // red -> pink
+            { name : 'red',            h : [346,9],    s : [1,74],     l : [10,100]    },  // red -> pink artlimes
 
             // red family
             { name : 'red',             h : [10,21],    s : [75,80],    l : [10,100]    },  // red
@@ -203,7 +203,7 @@ module.exports = {
             { name : 'yellow',          h : [39,66],    s : [35,100],   l : [15,90]     },
 
             // purple family
-            { name : 'purple',          h : [316,345],  s : [1,90],     l : [10,55]     },  // red-magenta -> purple
+            { name : 'red',          h : [316,345],  s : [1,90],     l : [10,55]     },  // red-magenta -> purple artlimes
             { name : 'purple',          h : [226,255],  s : [1,54],     l : [10,84]     },  // blue -> purple
             { name : 'purple',          h : [256,285],  s : [1,100],    l : [10,100]    },  // magenta-blue -> purple
             { name : 'purple',          h : [286,315],  s : [1,100],    l : [10,70]     },  // magenta -> purple
@@ -211,8 +211,8 @@ module.exports = {
             // blue family
             { name : 'blue',            h : [166,195],  s : [1,100],    l : [10,88]     },  // cyan -> blue
             { name : 'blue',            h : [196,225],  s : [1,100],    l : [10,100]    },  // blue-cyan -> blue
-            { name : 'blue',            h : [226,255],  s : [1,100],    l : [10,84]     },  // blue
-            
+            { name : 'purple',            h : [226,255],  s : [1,100],    l : [10,84]     },  // blue artlimes
+
             // neutral family
             { name : 'light',           h : [0,360],    s : [0,100],    l : [85,100]    },  // light
             { name : 'neutral',         h : [0,360],    s : [0,100],     l : [16,100]    },  // neutral
@@ -338,7 +338,7 @@ module.exports = {
 
                         // calculate tolerance
                         distance = delegate.getEuclidianDistance(_.values(color1.rgb), _.values(color2.rgb));
-                        
+
                         if (distance <= toleranceThreshold){
 
                             // colors are similar, absorb them
@@ -654,7 +654,7 @@ module.exports = {
                 }
             });
         });
-        
+
         // sort by family average
         this.sortColorsByScore(colors, 'familyAverage', 'average');
 
@@ -700,7 +700,7 @@ module.exports = {
         this.convertPathToImage(path, function(err, image){
 
             if (err){
-                
+
                 // image failed
                 callback(err, undefined);
 
@@ -839,7 +839,7 @@ module.exports = {
             rgb.push({
                 R : paletteColor.rgb.r,
                 G : paletteColor.rgb.g,
-                B : paletteColor.rgb.b 
+                B : paletteColor.rgb.b
             });
         });
 
@@ -847,7 +847,7 @@ module.exports = {
         closestColor = diff.closest({
             R : color.rgb.r,
             G : color.rgb.g,
-            B : color.rgb.b 
+            B : color.rgb.b
         }, rgb);
 
         // get closest palette color
@@ -903,7 +903,6 @@ module.exports = {
      * @param {Function} callback
      */
     extract: function(imagePath, maxColors, callback){
-
         this.extractProminentColors(imagePath, function(err, colors){
 
             if (err){
